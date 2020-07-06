@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>동혁마켓</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="productDetail.js"></script>
+    <meta charset="utf-8">
+</head>
+
+<body onload="detail()" style="display: flex; justify-content: center">
+<div>
+    <div>
+        <div>
+            <div>
+                <nav>
+                    <div>
+                        <div style="display: flex; justify-content: center">
+                            <img src="img/logo_x2.png"/>
+                        </div>
+                        <div style="display: flex; justify-content: center;">
+                            <ul style="list-style: none; display: inline">
+                                <li style="margin-right: 20px; float: left; display: inline"><a href="main.html"><h1>신상품</h1></a></li>
+                                <li style="margin-right: 20px; float: left; display: inline"><a href="best.html"><h1>베스트</h1></a></li>
+                                <li style="margin-right: 20px; float: left; display: inline"><a href="jangbaguni.html"><h1>장바구니</h1></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <div style="display: flex; flex-direction: row;">
+                    <div>
+                        <div style="margin-right: 10px;">
+                            <img src="img/juice.jpg"/>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 id="h2ProductName" style="margin: 0"></h2>
+                        <p id="productPrice"></p>
+                        <div>
+                            <h3>상세 내용</h3>
+                            <p id="description"></p>
+                        </div>
+                        <div>
+                            <button style="width: 140px" onclick="put()">장바구니</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
