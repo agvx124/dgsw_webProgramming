@@ -26,4 +26,15 @@
     <select id="findByUserId" parameterType="Long" resultType="HashMap">
         select * from cart join product p on cart.productId = p.id  where userid=#{userId} order by createdAt desc
     </select>
+
+    <delete id="payment" parameterType="Long">
+        delete from cart
+        where userid=#{userid}
+    </delete>
+
+    <select id="getPoint" parameterType="Long" resultType="int">
+        select sum(point)
+        from cart
+        where userid=#{userid}
+    </select>
 </mapper>

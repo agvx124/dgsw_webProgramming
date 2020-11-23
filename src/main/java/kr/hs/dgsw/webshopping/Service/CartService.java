@@ -14,4 +14,6 @@ public interface CartService {
     Cart findById(Long userId, Long productId);
 
     List<Cart> findByUserId(Long userId);
+
+    int payment(Long userId);
 }

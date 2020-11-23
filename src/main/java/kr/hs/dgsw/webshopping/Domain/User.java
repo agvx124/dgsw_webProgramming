@@ -21,4 +21,5 @@ public class User {
     private String email;
     private LocalDateTime created;
     private LocalDateTime modified;
+    private int point;
 }

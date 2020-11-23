@@ -15,4 +15,5 @@ public class Cart {
     private int amount;
     private int total;
     private LocalDateTime created;
+    private int point;
 }

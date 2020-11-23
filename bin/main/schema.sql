@@ -13,6 +13,7 @@ create table user
     email     varchar(20) not null unique,
     created   datetime default current_timestamp,
     modified  datetime default current_timestamp on update current_timestamp
+    point int,
 );
 
 create table product

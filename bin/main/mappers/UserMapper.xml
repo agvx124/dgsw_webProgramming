@@ -40,4 +40,10 @@
         from user
         where account=#{account} and password=#{password}
     </select>
+
+    <update id="accumulate" parameterType="kr.hs.dgsw.webshopping.Domain.User">
+        update user
+        set point=#{point}
+        where account=#{account}
+    </update>
 </mapper>

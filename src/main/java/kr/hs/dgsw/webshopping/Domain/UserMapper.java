@@ -22,4 +22,6 @@ public interface UserMapper {
     User login(User user);
 
     User findByAccount(@Param("account") String account);
+
+    int accumulate(User user);
 }

@@ -47,4 +47,9 @@ public class UserServiceImpl implements UserService {
     public User login(User user) {
         return userMapper.login(user);
     }
+
+    @Override
+    public int accumulate(User user) {
+        return userMapper.accumulate(user);
+    }
 }

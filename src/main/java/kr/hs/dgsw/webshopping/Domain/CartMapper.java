@@ -20,4 +20,8 @@ public interface CartMapper {
     List<Cart> findByUserId(@Param("userId") Long userId);
 
     void modify(Cart cart);
+
+    int payment(Long userId);
+
+    int getPoint(Long userId);
 }

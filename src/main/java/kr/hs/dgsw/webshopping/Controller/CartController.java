@@ -36,4 +36,9 @@ public class CartController {
     public List<Cart> findByUserId(@PathVariable("userId") Long userId) {
         return cartService.findByUserId(userId);
     }
+
+    @GetMapping(value = "/api/cart/user/pay/{userId}")
+    public int payment(@PathVariable("userId") Long userId) {
+        return cartService.payment(userId);
+    }
 }

@@ -18,4 +18,6 @@ public interface UserService {
     int modify(User user);
 
     User login(User user);
+
+    int accumulate(User user);
 }

@@ -47,4 +47,9 @@ public class UserController {
     public User login(@RequestBody User user) {
         return userService.login(user);
     }
+
+    @PutMapping("/api/user/point")
+    public int accumulate(@RequestBody User user) {
+        return userService.accumulate(user);
+    }
 }
