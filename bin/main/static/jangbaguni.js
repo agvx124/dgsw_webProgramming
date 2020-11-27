@@ -50,3 +50,43 @@ const deleteItem = (id) => {
         }
     })
 };
+
+const pay = () => {
+    const account = window.sessionStorage.getItem("account");
+ 
+    $.ajax({
+        url: `api/cart/user/pay/${account}`,
+        success: async(data) => {
+            alert("결제 하였습니다.");
+            await savePoint(data);
+        }
+    })
+}
+
+const savePoint = async (point) => {
+    const account = window.sessionStorage.getItem("account");
+
+    const userPoint = await $.ajax({
+        url: `api/user/account/${account}`,
+        success: (data) => {
+            return data;
+        }
+    });
+
+    const sumPoint = parseInt(userPoint.point + point);
+    console.log(sumPoint);
+
+    $.ajax({
+        url: `api/user/point`,
+        type: "put",
+        contentType: "application/json",
+        data: JSON.stringify({
+            "account": account,
+            "point": sumPoint,
+        }),
+        success: () => {
+            alert(`포인트가 적립되었습니다. 현재 포인트는 ${sumPoint}포인트 입니다.`);
+            location.href = "main.html"
+        }
+    })
+}

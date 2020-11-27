@@ -30,7 +30,7 @@
     </select>
 
     <select id="findByAccount" parameterType="String" resultType="kr.hs.dgsw.webshopping.Domain.User">
-        select id, account, username, password, tel, phone, zipcode, address, email
+        select id, account, username, password, tel, phone, zipcode, address, email, point
         from user
         where account=#{account}
     </select>

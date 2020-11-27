@@ -4,7 +4,7 @@
 <mapper namespace="kr.hs.dgsw.webshopping.Domain.CartMapper">
 
     <insert id="add" parameterType="kr.hs.dgsw.webshopping.Domain.Cart">
-        insert into cart(userId, productId, price, amount, total) values (#{userId}, #{productId}, #{price}, #{amount}, #{total})
+        insert into cart(userId, productId, price, amount, total, point) values (#{userId}, #{productId}, #{price}, #{amount}, #{total}, #{point})
     </insert>
 
     <delete id="deleteById" parameterType="Long">
@@ -22,7 +22,7 @@
         from cart
         where productid=#{productId} and userid=#{userId}
     </select>
-
+    
     <select id="findByUserId" parameterType="Long" resultType="HashMap">
         select * from cart join product p on cart.productId = p.id  where userid=#{userId} order by createdAt desc
     </select>
@@ -35,6 +35,6 @@
     <select id="getPoint" parameterType="Long" resultType="int">
         select sum(point)
         from cart
-        where userid=#{userid}
+        where userid=#{userId}
     </select>
 </mapper>
